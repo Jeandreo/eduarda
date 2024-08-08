@@ -21,24 +21,6 @@ class GiftController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-
-        // GET ALL DATA
-        $contents = $this->repository->orderBy('name', 'ASC')->get();
-
-        // RETURN VIEW WITH DATA
-        return view('pages.gifts.index')->with([
-            'contents' => $contents,
-        ]);
-
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -91,6 +73,31 @@ class GiftController extends Controller
 
         // GENERATES DISPLAY WITH DATA
         return view('pages.gifts.edit')->with(['content' => $content]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function take($id)
+    {
+        // GET ALL DATA
+        $content = $this->repository->find($id);
+
+        // VERIFY IF EXISTS
+        if(!$content) return redirect()->back();
+
+        // Salva
+        $content->take_by = Auth::id();
+        $content->take_at = now();
+        $content->save();
+
+        // Show de bolaaa
+        return redirect()
+            ->route('dashboard', $id)
+            ->with('message', 'Perfeiito, você escolheu levar <span class="text-bolder text-primary">' . $content->name . '</span>🥰, nos vemos no chá!');
     }
 
     /**

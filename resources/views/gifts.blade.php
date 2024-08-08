@@ -19,14 +19,20 @@
                     <img src="{{ findImage('presentes/' . ($gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-250px h-250px rounded" alt="">
                     <h2 class="fw-bolder text-gray-700 text-center my-5">{{ $gift->name }}</h2>
                     <div>
-                        @if ($gift->status)
-                            <a href="{{ route('gifts.edit', $gift->id) }}" class="btn btn-primary btn-active-success text-uppercase fw-bolder">
+                        @if (Auth::user()->gift)
+                            <span class="btn btn-light text-uppercase fw-bolder">
+                                Você já escolheu
+                            </span>
+                        @else
+                        @if ($gift->take_by == null)
+                            <a href="{{ route('gifts.take', $gift->id) }}" class="btn btn-primary btn-active-success text-uppercase fw-bolder">
                                 Vou levar esse 🥰
                             </a>
                         @else
-                            <span class="btn btn-light text-uppercase fw-bolder">
+                            <span class="btn btn-danger text-uppercase fw-bolder">
                                 Já escolheram esse 🥲
                             </span>
+                        @endif
                         @endif
                     </div>
                 </div>

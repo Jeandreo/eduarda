@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 
     })->name('dashboard');
 
+    Route::get('/vou-levar-esse/{id}', [GiftController::class, 'take'])->name('gifts.take');
 
 
     Route::group(['middleware' => 'admin'], function () {
