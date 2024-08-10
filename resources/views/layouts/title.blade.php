@@ -1,5 +1,5 @@
-<div class="page-title d-flex justify-content-between">
-	<h1 class="page-heading text-gray-100 fw-bold fs-3x mb-0" style="text-shadow: 5px 5px 30px #880b29;">
+<div class="page-title d-md-flex justify-content-between">
+	<h1 class="page-heading text-gray-100 fw-bold fs-3x mb-5 mb-md-0 text-center" style="text-shadow: 5px 5px 30px #880b29;">
 	   @yield('title-page', '#######')
 	</h1>
 	<div class="d-flex">
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="card">
-			<a href="{{ route('logout') }}" class="card-body py-2 d-flex align-items-center">
+			<a href="{{ route('logout') }}" class="card-body py-2 d-flex align-items-center px-2 px-md-8">
 				<span class="text-gray-800 fw-bolder fs-3">Sair</span>
 			</a>
 		</div>

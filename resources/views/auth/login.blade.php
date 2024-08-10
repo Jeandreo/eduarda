@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-100 vh-100 d-flex align-items-center justify-content-center">
+<div class="w-100 vh-100 d-flex align-items-center justify-content-center p-4">
     <div class="card w-750px">
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
@@ -9,7 +9,12 @@
                     <h1 class="text-gray-900 fw-bolder mb-3">
                         Seja Bem Vinda! ❤️
                     </h1>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QKgo47jdVsY?si=ksuYyrGzjmoxGCeD" class="rounded shadow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="d-none d-md-block">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QKgo47jdVsY?si=ksuYyrGzjmoxGCeD" class="rounded shadow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="d-block d-md-none">
+                        <iframe width="100%" height="220" src="https://www.youtube.com/embed/QKgo47jdVsY?si=ksuYyrGzjmoxGCeD" class="rounded shadow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="separator separator-content mt-14 mb-8">
                     <span class="w-350px text-gray-600 fw-semibold fs-7">Acesse com seus dados abaixo</span>

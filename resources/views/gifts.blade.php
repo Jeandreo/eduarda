@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             <div class="card mb-8">
                 <div class="card-body">
                     <h2 class="text-gray-800 fw-bolder">Oláaaaa</h2>
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
             <div class="card mb-8">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -27,7 +27,7 @@
             </div>
         </div>
         @foreach ($gifts as $gift)
-        <div class="col-3">
+        <div class="col-12 col-md-3">
             <div class="card mb-4">
                 <div class="card-body p-4 text-center">
                     <img src="{{ findImage('presentes/' . ($gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-100 rounded object-fit-cover" alt="">
