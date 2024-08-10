@@ -42,7 +42,7 @@
                 </div>
                 <div class="text-gray-500 text-center fw-semibold fs-6">
                     Não esta conseguindo acessar?
-                    <a href="/metronic8/demo1/authentication/layouts/corporate/sign-up.html" class="link-primary">
+                    <a href="https://wa.me/554191971430?text=Oii%2C%20Preciso%20de%20ajuda%20para%20acessar%20o%20site." target="_blank" class="link-primary">
                     Clique Aqui
                     </a>
                     que eu te ajudo 😁
