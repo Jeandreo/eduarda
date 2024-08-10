@@ -7,7 +7,7 @@
 <meta property="og:title" content="short title of your website/webpage" />
 <meta property="og:url" content="https://www.example.com/webpage/" />
 <meta property="og:description" content="description of your website/webpage" />
-<meta property="og:image" content="//cdn.example.com/uploads/images/webpage_300x200.png" />
+<meta property="og:image" content="{{ asset('assets/media/avatars/300-10.jpg) }}" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
