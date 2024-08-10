@@ -3,11 +3,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="utf-8" />
 <meta property="og:locale" content="pt_BR" />
-<meta name="description" content="description of your website/webpage, make sure you use keywords!" />
-<meta property="og:title" content="short title of your website/webpage" />
-<meta property="og:url" content="https://www.example.com/webpage/" />
-<meta property="og:description" content="description of your website/webpage" />
-<meta property="og:image" content="{{ asset('assets/media/avatars/300-10.jpg') }}" />
+<meta name="description" content="Participe do Chá de Casa Nova! Celebre a nova fase com amigos e família, descubra detalhes sobre o evento e como contribuir para tornar este momento ainda mais especial.">
+<meta property="og:title" content="Chá de Casa Nova - Celebre Conosco!">
+<meta property="og:url" content="https://www.exemplo.com/cha-de-casa-nova/">
+<meta property="og:description" content="Junte-se ao Chá de Casa Nova e celebre com amigos e família. Descubra como participar e contribuir para tornar este momento inesquecível.">
+<meta property="og:image" content="{{ asset('assets/media/avatars/eduarda.jpg') }}" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
