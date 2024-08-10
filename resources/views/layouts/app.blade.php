@@ -14,10 +14,10 @@
                     </div>
                     @endif
                     @if (!isset($fullWidth) && Auth::check())
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         @include('layouts.sidebar')
                     </div>
-                    <div class="col-9">
+                    <div class="col-12 col-md-9">
                         @yield('content')
                     </div>
                 </div>

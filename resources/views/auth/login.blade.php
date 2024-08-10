@@ -20,11 +20,11 @@
                     <span class="w-350px text-gray-600 fw-semibold fs-7">Acesse com seus dados abaixo</span>
                 </div>
                 <div class="mb-5">
-                    <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control form-control-solid"> 
+                    <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control form-control-solid" required> 
                 </div>
-                <div class="mb-3">
-                    <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control form-control-solid">
-                    
+                <div class="mb-3 position-relative">
+                    <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control form-control-solid" required>
+                    <i class="fa-solid fa-eye fs-3 position-absolute top-50 end-0 translate-middle-y me-5 show-pass text-gray-700 text-hover-primary cursor-pointer"></i>
                 </div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -52,10 +52,19 @@
     </div>
 </div>
 @endsection
+
 @section('custom-footer')
 <script>
     $(document).ready(function(){
-
-});
+        $('.show-pass').click(function(){
+            $(this).toggleClass('fa-eye fa-eye-slash');
+            // Seleciona o campo de senha
+            var passwordField = $('[name="password"]');
+                
+            // Alterna o tipo do campo entre "password" e "text"
+            var isPassword = passwordField.attr('type') === 'password';
+            passwordField.attr('type', isPassword ? 'text' : 'password');
+        });
+    });
 </script>
 @endsection
