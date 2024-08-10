@@ -20,15 +20,19 @@
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
-                                <img src="{{ findImage('presentes/' . ($gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-25px h-25px rounded me-4" alt="">
-                                <a href="{{ route('gifts.edit', $gift->id) }}" class="fw-bolder text-gray-700 text-hover-primary">{{ $gift->name }}</a>
+                                <img src="{{ findImage('presentes/' . ($gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-25px h-25px rounded object-fit-cover me-4" alt="">
+                                <span class="fw-bolder text-gray-700 ">{{ $gift->name }}</span>
                             </div>
                         </td>
                         <td>
-                            -
+                            @if ($gift->user)
+                                <span class="badge badge-light-primary">{{ $gift->user->name }}</span>
+                            @endif
                         </td>
                         <td>
-                            -
+                            @if ($gift->take_at)
+                                <span class="badge badge-light-info">{{ date('d/m/Y') }} às {{ date('H:i') }}</span>
+                            @endif
                         </td>
                         <td>
                             @if ($gift->status == true)
@@ -38,12 +42,14 @@
                             @endif
                         </td>
                         <td>
+                            @if (!$gift->user)
                             <a href="{{ route('gifts.edit', $gift->id) }}">
                                 <i class="fa-solid fa-pen-to-square text-gray-700 text-hover-primary mx-1"></i>
                             </a>
                             <a href="{{ route('gifts.destroy', $gift->id) }}">
                                 <i class="fa-solid fa-rotate text-gray-700 text-hover-primary mx-1"></i>
                             </a>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

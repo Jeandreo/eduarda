@@ -5,26 +5,27 @@
     </head>
     <body style="background: url('{{ asset('assets/media/images/background.jpg') }}'); background-position: center center; background-size: cover;">
         @include('layouts.config')
-        <div class="content">
-            <div class="container">
-                <div class="row py-12">
+            @if (Auth::check())
+            <div class="content">
+                <div class="container">
+                    <div class="row py-12">
                     <div class="col-12 mb-8">
                         @include('layouts.title')
                     </div>
-                    @if (!isset($fullWidth))
+                    @endif
+                    @if (!isset($fullWidth) && Auth::check())
                     <div class="col-3">
                         @include('layouts.sidebar')
                     </div>
                     <div class="col-9">
                         @yield('content')
                     </div>
-                    @endif
-                    <div class="col-12">
-                        @yield('content')
-                    </div>
                 </div>
             </div>
         </div>
+        @else
+            @yield('content')
+        @endif
         @if(session('message'))
         <div class="modal fade" tabindex="-1" id="message_modal">
             <div class="modal-dialog modal-dialog-centered mw-750px">

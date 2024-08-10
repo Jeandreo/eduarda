@@ -7,13 +7,8 @@ use App\Models\Gift;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
-
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-
+    Route::get('/', function () {
 
         if(Auth::user()->admin == 1){
             $gifts = Gift::get(); 
@@ -23,7 +18,7 @@ Route::middleware('auth')->group(function () {
             return view('gifts')->with(['gifts' => $gifts, 'fullWidth' => true]);
         }
 
-    })->name('dashboard');
+    })->name('index');
 
     Route::get('/vou-levar-esse/{id}', [GiftController::class, 'take'])->name('gifts.take');
 

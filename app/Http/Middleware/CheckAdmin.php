@@ -23,6 +23,6 @@ class CheckAdmin
         }
 
         // Caso contrário, redirecione para uma página de erro ou acesso negado
-        return redirect()->route('dashboard')->with('message', 'Você não tem permissão para acessar esta página.');
+        return redirect()->route('index')->with('message', 'Você não tem permissão para acessar esta página.');
     }
 }

@@ -52,7 +52,7 @@ class GiftController extends Controller
 
         // REDIRECT AND MESSAGES
         return redirect()
-                ->route('dashboard')
+                ->route('index')
                 ->with('message', 'Presente adicionado com sucesso.');
 
     }
@@ -96,7 +96,7 @@ class GiftController extends Controller
 
         // Show de bolaaa
         return redirect()
-            ->route('dashboard', $id)
+            ->route('index')
             ->with('message', 'Perfeiito, você escolheu levar <span class="text-bolder text-primary">' . $content->name . '</span>🥰, nos vemos no chá!');
     }
 
@@ -154,7 +154,7 @@ class GiftController extends Controller
 
         // REDIRECT AND MESSAGES
         return redirect()
-            ->route('dashboard')
+            ->route('index')
             ->with('message', 'Presente <b>'. $content->name . '</b> '. $message .' com sucesso.');
 
     }

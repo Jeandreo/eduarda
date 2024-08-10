@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-12">
+        <div class="col-8">
             <div class="card mb-8">
                 <div class="card-body">
                     <h2 class="text-gray-800 fw-bolder">Oláaaaa</h2>
@@ -12,11 +12,25 @@
                 </div>
             </div>
         </div>
+        <div class="col-4">
+            <div class="card mb-8">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ findImage('presentes/' . (Auth::user()->gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-150px rounded object-fit-cover" alt="">
+                        <div class="ms-6">
+                            <h4 class="text-gray-600 fw-bold">Você escolheu levar</h4>
+                            <h1 class="text-gray-800 fw-bolder">{{ Auth::user()->gift->name }}</h1>
+                            <p class="text-gray-600 fw-normal m-0">Escolhido <span class="fw-bolder">{{ date('d/m/Y') }}</span> às <span class="fw-bolder">{{ date('H:i') }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         @foreach ($gifts as $gift)
         <div class="col-3">
             <div class="card mb-4">
                 <div class="card-body p-4 text-center">
-                    <img src="{{ findImage('presentes/' . ($gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-250px h-250px rounded" alt="">
+                    <img src="{{ findImage('presentes/' . ($gift->id ?? 0) . '.jpg', 'no-photo') }}" class="w-100 rounded object-fit-cover" alt="">
                     <h2 class="fw-bolder text-gray-700 text-center my-5">{{ $gift->name }}</h2>
                     <div>
                         @if (Auth::user()->gift)

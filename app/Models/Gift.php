@@ -29,4 +29,12 @@ class Gift extends Model
     {
         return $this->HasOne(User::class);
     }
+    
+    /**
+     * Get the ids of projects for the status.
+     */
+    public function user(): HasOne
+    {
+        return $this->HasOne(User::class, 'id', 'take_by');
+    }
 }

@@ -1,6 +1,6 @@
 
 <div class="card mb-5">
-    <a href="{{ route('dashboard') }}" class="card-body">
+    <a href="{{ route('index') }}" class="card-body">
         <div class="d-flex align-items-center">
             <i class="fa-solid fa-gift text-success fs-2x me-6"></i>
             <span class="text-gray-700 fw-bolder fs-2">Lista de Presentes</span>
